@@ -13,3 +13,6 @@
 
 ## マーケット
 くせ毛でスタイリングに悩み、興味、関心がある方
+
+## ER図
+（https://i.gyazo.com/edbab96c8e20d8808d87a79e53f6fdc4.png）
