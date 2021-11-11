@@ -16,3 +16,6 @@
 
 ## ER図
 （https://i.gyazo.com/edbab96c8e20d8808d87a79e53f6fdc4.png）
+
+## 画面遷移図
+(https://www.figma.com/file/zU68Fm9yZ3lmXlfJ4LkOgR/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1)
