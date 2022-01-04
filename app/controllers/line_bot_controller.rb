@@ -1,7 +1,7 @@
 class LineBotController < ApplicationController
   protect_from_forgery except: [:callback]
 
-  require 'line/bot'  # gem 'line-bot-api'
+  require 'line/bot'
   require 'open-uri'
   require 'kconv'
   require 'rexml/document'
@@ -63,14 +63,6 @@ class LineBotController < ApplicationController
             text: push
           }
           client.reply_message(event['replyToken'], message)
-          # LINEお友達追された場合
-        when Line::Bot::Event::Follow
-          line_user_id = event['source']['userId']
-          User.create(line_user_id: line_user_id)
-          # LINEお友達解除された場合
-        when Line::Bot::Event::Unfollow
-          line_user_id = event['source']['userId']
-          User.find_by(line_user_id: line_user_id).destroy
       end
     end
     head :ok
