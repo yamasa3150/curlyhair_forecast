@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :settings, only: %i[update new create edit]
+  resources :users, only: %i[create]
+
   root 'top#index'
   post '/callback' => 'line_bot#callback'
+  get '/new_setting' => 'settings#new_setting'
+  get '/edit_setting' => 'settings#edit_setting'
+  get '/setting' => 'settings#setting'
 end

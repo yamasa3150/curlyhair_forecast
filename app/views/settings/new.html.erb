@@ -1,0 +1,9 @@
+<%= javascript_pack_tag 'settings/new' %>
+<%= form_with model: @setting, id: 'setting_form' do |f|%>
+  <div class="field">
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+    <%= f.time_select(:push_time, {class:'select-date', prompt:'--', time_separator: ':'}, ignore_data: true) %>
+    <%= f.submit '登録'%>
+  </div>
+<% end %>
+
