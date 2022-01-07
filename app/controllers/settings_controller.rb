@@ -1,5 +1,4 @@
 class SettingsController < ApplicationController
-  before_action :setting_check, only: [:edit]
 
   def new
     @setting = Setting.new
@@ -12,7 +11,7 @@ class SettingsController < ApplicationController
   end
   
   def edit
-    @setting = current_user.setting.find(params[:id])
+    @setting = current_user.setting
   end
   
   def update

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // lineIDのトークンをcontroller側に送る処理
       fetch(request)
         .then(() => {
-          const redirect_url = `settings/edit`
+          const redirect_url = `settings/:id/edit`
           window.location = redirect_url
         })
     })

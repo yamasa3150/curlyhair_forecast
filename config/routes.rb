@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :settings, only: %i[update new create edit]
+  resources :settings, only: %i[new edit create update]
   resources :users, only: %i[create]
 
   root 'top#index'
