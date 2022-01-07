@@ -19,7 +19,9 @@ class LineBotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           app_id = ENV["OPEN_WEATHER_MAP_APPID"]
-          url = "http://api.openweathermap.org/data/2.5/forecast?q=Tokyo&appid=#{app_id}&units=metric&mode=xml"
+          user = User.find_by(line_user_id: ENV["LINE_CHANNEL_USER_ID"])
+          prefecture = user.setting.prefecture.name_e
+          url = "http://api.openweathermap.org/data/2.5/forecast?q=#{prefecture}&appid=#{app_id}&units=metric&mode=xml"
          # XMLをパースしていく
           xml = open( url ).read.toutf8
           doc = REXML::Document.new(xml)
